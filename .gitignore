@@ -112,3 +112,4 @@ core.*
 # pixi environments
 .pixi
 *.egg-info
+build_test/
