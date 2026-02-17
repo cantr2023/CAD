@@ -178,6 +178,9 @@ QToolBar * LC_ToolbarFactory::createEntityLayersToolbar(const QSizePolicy  &tbPo
 }
 
 void LC_ToolbarFactory::createStandardToolbars(){
+    // Early return to disable standard toolbar creation for clean AutoCAD Classic interface
+    return;
+    
     QSizePolicy tbPolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     auto file = createFileToolbar(tbPolicy);
@@ -256,6 +259,9 @@ void LC_ToolbarFactory::addInfoCursorOptionAction(QMenu *menu, const char *name,
 }
 
 void LC_ToolbarFactory::initCADToolbars() const {
+    // Early return to disable CAD toolbar creation for clean AutoCAD Classic interface
+    return;
+    
     bool enable_cad_toolbars = LC_GET_ONE_BOOL("Startup", "EnableCADToolbars", true);
     if (enable_cad_toolbars) {
         createCADToolbars();
@@ -295,6 +301,9 @@ void LC_ToolbarFactory::createCADToolbars() const {
 }
 
 QToolBar *LC_ToolbarFactory::createCategoriesToolbar() {
+    // Early return to disable categories toolbar creation for clean AutoCAD Classic interface
+    return nullptr;
+    
     auto *toolbar = createGenericToolbar(tr("Categories"), "Categories",
                                          QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding), {},0);
 

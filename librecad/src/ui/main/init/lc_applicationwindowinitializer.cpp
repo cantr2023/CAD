@@ -202,6 +202,8 @@ void LC_ApplicationWindowInitializer::initDockAreasActions() const {
 void LC_ApplicationWindowInitializer::initMainMenu() const {
     m_appWin->m_menuFactory = std::make_unique<LC_MenuFactory>(m_appWin);
     m_appWin->m_menuFactory->createMainMenu(m_appWin->menuBar());
+    // Hide menu bar for clean AutoCAD Classic interface
+    m_appWin->menuBar()->hide();
 }
 
 void LC_ApplicationWindowInitializer::updateCommandsAlias(){
