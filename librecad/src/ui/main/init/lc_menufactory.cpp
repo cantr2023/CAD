@@ -88,7 +88,7 @@ void LC_MenuFactory::createMainMenu(QMenuBar* menuBar) {
 void LC_MenuFactory::doCreateMenus(QMenuBar* menu_bar, bool firstCreation) {
     // Early return to disable menu creation for clean AutoCAD Classic interface
     return;
-    
+
     QList<QMenu*> topMenuMenus;
     if (firstCreation) {
         createFileMenu(menu_bar, topMenuMenus);
